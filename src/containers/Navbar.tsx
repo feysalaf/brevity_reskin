@@ -131,13 +131,13 @@ interface NavbarProps {
 }
 
 const Navbar: React.FC<NavbarProps> = ({ logOff }) => {
-  const [ setHoveredLink] = React.useState<string | null>(null);
+  const [hoveredLink, setHoveredLink] = React.useState<string | null>(null);
   const [logOffPrompt, setLogOffPrompt] = React.useState<boolean>(false);
   const navigate = useNavigate();
   const location = useLocation();
 
   const navItems = ['Profile', 'Pricing', 'Manage plans', 'Contact', 'FAQ'];
-
+  console.log(hoveredLink);
   const shouldHideLogOff = (): boolean => {
     const hiddenPathsLogoff = [
       '/user/new-analysis',
