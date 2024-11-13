@@ -131,7 +131,7 @@ interface NavbarProps {
 }
 
 const Navbar: React.FC<NavbarProps> = ({ logOff }) => {
-  const [hoveredLink, setHoveredLink] = React.useState<string | null>(null);
+  const [ setHoveredLink] = React.useState<string | null>(null);
   const [logOffPrompt, setLogOffPrompt] = React.useState<boolean>(false);
   const navigate = useNavigate();
   const location = useLocation();
