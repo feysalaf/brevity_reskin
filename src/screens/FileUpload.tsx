@@ -15,9 +15,9 @@ import {
   uploadVideoRequest,
 } from "../store/analysis/actions";
 
-interface Params {
-  [key: string]: string | undefined;
-}
+// interface Params {
+//   [key: string]: string | undefined;
+// }
 
 const FileUpload: React.FC = () => {
   const params = useParams<{ type: string }>();

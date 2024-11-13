@@ -215,9 +215,9 @@
 // export default Analyze;
 
 import React, { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
-import { state } from "../store/rootReducer";
+// import { state } from "../store/rootReducer";
 import {
   Dialog,
   DialogContent,
@@ -227,17 +227,17 @@ import {
 } from "@mui/material";
 
 const Analyze: React.FC = () => {
-  const [currentFile, setCurrentFile] = useState<number>(0);
+  // const [currentFile, setCurrentFile] = useState<number>(0);
   const [progress, setProgress] = useState<number>(0);
   const [cancelPrompt, setcancelPrompt] = useState<boolean>(false);
-  const { count } = useParams<{ count: string }>(); // Extracting 'count' parameter from URL
-  const reports = useSelector((state: state) => state.upload.reports);
+  // const { count } = useParams<{ count: string }>(); // Extracting 'count' parameter from URL
+  // const reports = useSelector((state: state) => state.upload.reports);
   const navigate = useNavigate();
-  const totalCount = parseInt(count || "0", 10); // Ensure count is a number
-  const [heading, setHeading] = useState<string>("Analyzing");
-  const [showTick, setShowTick] = useState<boolean>(false);
-  const [oldHeading, setOldHeading] = useState<string>("");
-  const [hideFileProgress, setHideFileProgress] = useState<boolean>(false);
+  // const totalCount = parseInt(count || "0", 10); // Ensure count is a number
+  // const [heading, setHeading] = useState<string>("Analyzing");
+  // const [showTick, setShowTick] = useState<boolean>(false);
+  // const [oldHeading, setOldHeading] = useState<string>("");
+  // const [hideFileProgress, setHideFileProgress] = useState<boolean>(false);
 
   const handleCloseCancelPrompt = () => {
     setcancelPrompt(false);
