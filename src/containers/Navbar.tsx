@@ -136,7 +136,7 @@ const Navbar: React.FC<NavbarProps> = ({ logOff }) => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const navItems = ['Profile', 'Pricing', 'Manage plans', 'Contact', 'FAQ'];
+  const navItems = ['Profile', 'Pricing', 'Manage plans', 'Contact','Settings', 'FAQ'];
 
   const shouldHideLogOff = (): boolean => {
     const hiddenPathsLogoff = [

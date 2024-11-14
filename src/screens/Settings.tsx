@@ -1,11 +1,14 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Typography, TextField, Box, Grid, List, ListItem, ListItemText } from '@mui/material';
+// import { useNavigate } from 'react-router-dom';
+import { TextField, Box, Grid } from '@mui/material';
 // import { CSSTransition } from 'react-transition-group';
 import { css, Global } from '@emotion/react';
+// import ProgressCard from '../containers/ProgressCard';
+import Sidebar from '../containers/Sidebar';
+import StatsGrid from '../containers/StatsGrid';
 
 const Settings: React.FC = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   // const [showGreeting, setShowGreeting] = useState(true);
   // const [showSecondaryText, setShowSecondaryText] = useState(false);
 
@@ -43,6 +46,9 @@ const Settings: React.FC = () => {
 
   return (
     <div className='home-container' style={{ display: 'flex', flexDirection: 'row', paddingTop: '20px' }}>
+      {/* <ProgressCard/> */}
+      <Sidebar/>
+
       <Global
         styles={css`
           .fade-enter {
@@ -101,64 +107,7 @@ const Settings: React.FC = () => {
           }
         `}
       />
-    <Box 
-      sx={{ 
-        width: '20%', 
-        paddingRight: '20px', 
-        backgroundColor: '#f7f7f7', 
-        padding: '20px', 
-        borderRight: '1px solid #e0e0e0',
-        height: '50vh',
-        marginTop:'-160px'
-      }}
-    >
-      <Box className='middle-box' 
-        sx={{ 
-          backgroundColor: 'black', 
-          padding: '10px 20px', 
-          borderRadius: '8px', 
-          marginBottom: '20px',
-        }}
-      >
-        <Typography variant="h6" sx={{ color: 'white',fontFamily: 'Oswald' }}>
-          Settings
-        </Typography>
-      </Box>
-      <List component="nav">
-        <ListItem 
-          button 
-          onClick={() => navigate('/user/new-analysis')} 
-          sx={{ 
-            marginBottom: '10px', 
-            borderRadius: '8px', 
-            '&:hover': { backgroundColor: '#e0e0e0' } 
-          }}
-        >
-          <ListItemText primary="New Analysis" sx={{ color: '#555' }} />
-        </ListItem>
-        <ListItem 
-          button 
-          onClick={() => navigate('/user/settings')} 
-          sx={{ 
-            marginBottom: '10px', 
-            borderRadius: '8px', 
-            '&:hover': { backgroundColor: '#e0e0e0' } 
-          }}
-        >
-          <ListItemText primary="Account" sx={{ color: '#555' }} />
-        </ListItem>
-        <ListItem 
-          button 
-          onClick={() => navigate('/user/settings')} 
-          sx={{ 
-            borderRadius: '8px', 
-            '&:hover': { backgroundColor: '#e0e0e0' } 
-          }}
-        >
-          <ListItemText primary="Settings" sx={{ color: '#555' }} />
-        </ListItem>
-      </List>
-    </Box>
+
       {/* Main Content */}
       <Box sx={{ width: '80%',padding:'50px' }}>
         {/* <CSSTransition in={showGreeting} timeout={1000} classNames='fade' unmountOnExit>
@@ -166,20 +115,21 @@ const Settings: React.FC = () => {
             User Account
           </Typography>
         </CSSTransition> */}
-           <Typography variant='h4' sx={{ textAlign: 'center', alignSelf: 'center', marginBottom: 7, fontWeight: 400, fontFamily: 'Oswald', fontSize: '30px' }}>
+           {/* <Typography variant='h4' sx={{ textAlign: 'center', alignSelf: 'center', marginBottom: 7, fontWeight: 400, fontFamily: 'Oswald', fontSize: '30px' }}>
             User Account
-          </Typography>
- 
-        <Box sx={{ width: '100%', marginTop: 4 }}>
+          </Typography> */}
+          <StatsGrid/>
+
+        <Box sx={{ width: '100%', marginTop: 0 }}>
           <Grid container spacing={2} justifyContent="center">
             {/* <Grid item xs={12} style={{ display: 'flex', justifyContent: 'center' }}>
               <Avatar alt="User Avatar" src="https://via.placeholder.com/150" sx={{ width: 80, height: 80 }} />
             </Grid> */}
             <Grid item xs={12}>
-              <TextField fullWidth label="Name" variant="outlined" value="John Doe" InputProps={{ readOnly: true }} />
+              <TextField fullWidth label="Name" variant="outlined" value="Name" InputProps={{ readOnly: true }} />
             </Grid>
             <Grid item xs={12}>
-              <TextField fullWidth label="Email" variant="outlined" value="johndoe@example.com" InputProps={{ readOnly: true }} />
+              <TextField fullWidth label="Email" variant="outlined" value="email@example.com" InputProps={{ readOnly: true }} />
             </Grid>
             <Grid item xs={12}>
               <TextField fullWidth label="Phone" variant="outlined" value="+1 234 567 890" InputProps={{ readOnly: true }} />
@@ -191,30 +141,8 @@ const Settings: React.FC = () => {
               <Button variant="contained" color="primary" onClick={() => navigate('/user/edit-profile')}>
                 Edit Profile
               </Button>
-
-
-              
             </Grid> */}
 
-
-            <Box className='middle-boxes' sx={{ width: '100%', marginTop: 4 , padding:'10px'}}>
-                        <Box className='middle-box'>
-                            <Typography variant='h4'>Minutes used</Typography>
-                            <Typography variant='h2'>0</Typography>
-                        </Box>
-                        <Box className='middle-box'>
-                            <Typography variant='h4'>Pages used</Typography>
-                            <Typography variant='h2'>0</Typography>
-                        </Box>
-                        <Box className='middle-box'>
-                            <Typography variant='h4'>Charges</Typography>
-                            <Typography variant='h2'>0</Typography>
-                        </Box>
-                        <Box className='middle-box'>
-                            <Typography variant='h4'>Lies Detected</Typography>
-                            <Typography variant='h2'>0 </Typography>
-                        </Box>
-                    </Box>
           </Grid>
         </Box>
       </Box>

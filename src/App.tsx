@@ -19,6 +19,7 @@ import FileUpload from "./screens/FileUpload.tsx";
 import Analyze from "./screens/Analyze.tsx";
 import AnalysisResults from "./screens/AnalysisResults.tsx";
 import ProtectedRoute from "./Layouts/ProtecetedRoutes.tsx";
+import '@mantine/core/styles.css';
 
 
 // import Sample from './screens/Sample'
