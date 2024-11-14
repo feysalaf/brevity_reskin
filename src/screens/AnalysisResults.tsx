@@ -187,7 +187,9 @@ import { deletePDFs } from "../store/analysis/actions";
 import { Typography, Box, Dialog, DialogActions, DialogContent, Button } from "@mui/material";
 
 const AnalysisResults = () => {
-  const [endSession, setEndSession] = useState<boolean>(false);
+  // const [endSession, setEndSession] = useState<boolean>(false);
+  const [endSession] = useState<boolean>(false);
+
   const [backPrompt, setBackPrompt] = useState<boolean>(false); // New state for dialog
   const navigate = useNavigate();
   const text_pdfs = useSelector((state: state) => state.upload.reports);
